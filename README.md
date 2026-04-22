@@ -1,45 +1,51 @@
-# Train Consist Management App  
-**App-Based Learning Using Core Java & Data Structures**
+# 🚆 Train Consist Management Application
 
-## Objective
-This project focuses on the design and implementation of a **Train Consist Management System** to demonstrate how Core Java and fundamental data structures are applied to solve real-world railway operations challenges. Rather than treating data structures as isolated theory, the system shows how they enable:
+## 📌 Overview
+The Train Consist Management App is a console-based Java application that simulates how railway systems manage train bogies.
 
-- **Efficient Arrangement**: Reordering coaches using dynamic data structures.  
-- **Real-Time Consistency**: Maintaining coach composition and allocation integrity.  
-- **Validation**: Prevention of duplication or invalid configurations through structured logic.  
-- **Flexibility**: A maintainable system design adaptable to changing operational needs.  
-
-References:  
-- Springer Nature Link  
-- Smart Programming (+2)  
+This use case focuses on enforcing uniqueness of bogie IDs using Set.
 
 ---
 
-## Learning Approach
-The application is developed incrementally, with each use case introducing one new concept at a time while reinforcing previously learned ideas. Every design decision is intentional and reflects how real-world systems evolve—from basic implementations to scalable and adaptable architectures.
+## 🎯 Use Case 3: Track Unique Bogie IDs (HashSet)
 
-Each stage highlights:
-- Why a specific data structure is chosen.  
-- What operational problem it solves in a railway context.  
-- What constraints or inefficiencies exist before refinement.  
-
-References:  
-- Scribd  
-- Smart Programming (+2)  
+### 📖 Description
+This use case introduces the `Set` interface and `HashSet` implementation to ensure that no duplicate bogie IDs exist in the system.
 
 ---
 
-## Scope & Focus
-The emphasis is on **data structures, object-oriented design, and advanced Java concepts**.
+## ⚠️ Drawback of UC2
+- Used ArrayList which allows duplicates
+- Duplicate bogie IDs can cause:
+  - Data inconsistency
+  - Invalid train formation
+  - Safety issues
 
-- **UI/UX**: User interaction and interface complexity are intentionally minimized to maintain focus on core system behavior and logic.  
-- **Operations**: All operations are deterministic and console-based, ensuring clarity, traceability, and ease of debugging.  
-
-References:  
-- Scribd  
-- Smart Programming (+1)  
+👉 UC3 solves this using HashSet.
 
 ---
 
-## Outcome
-By the end of this project, learners will understand not only how to use Java data structures, but also how to apply them effectively in managing dynamic, real-world systems—bridging the gap between theoretical knowledge and practical software design.
+## 🔑 Key Concepts Used
+
+- **Set Interface** → Collection that does not allow duplicates  
+- **HashSet** → Implementation using hashing  
+- **add()** → Insert elements  
+- **Automatic Deduplication** → Removes duplicates automatically  
+- **Unordered Storage** → No index-based ordering  
+
+---
+
+## 🛠 Key Requirements Implemented
+
+- Created `HashSet<String>` for bogie IDs  
+- Added duplicate values intentionally  
+- Displayed final set  
+- Verified duplicates are removed automatically  
+
+---
+
+## ▶️ How to Run
+
+1. Compile:
+   ```bash
+   javac UseCase3UniqueBogieIDMgmnt.java

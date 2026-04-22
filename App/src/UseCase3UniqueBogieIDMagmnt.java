@@ -24,7 +24,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class UseCase3UniqueBogieIDMgmnt{
+public class UseCase3UniqueBogieIDMagmnt{
 
     public static void main(String[] args) {
 
