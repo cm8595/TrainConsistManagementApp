@@ -1,47 +1,48 @@
 # 🚆 Train Consist Management Application
 
 ## 📌 Overview
-The Train Consist Management App simulates how railway systems manage train bogies and their operational attributes.
+The Train Consist Management App simulates how railway systems manage train bogies and their attributes.
 
-This use case focuses on mapping bogies to their seating or load capacity using HashMap.
+This use case focuses on sorting bogies based on capacity using Comparator.
 
 ---
 
-## 🎯 Use Case 6: Map Bogie to Capacity (HashMap)
+## 🎯 Use Case 7: Sort Bogies by Capacity (Comparator)
 
 ### 📖 Description
-This use case introduces key–value mapping where each bogie is associated with its capacity.
+This use case introduces custom sorting of bogies using Comparator, enabling better planning and analysis.
 
 ---
 
-## ⚠️ Drawback of UC5
-- Only stored bogie names
-- No additional attributes
-- Cannot perform validation or analysis
+## ⚠️ Drawback of UC6
+- Data stored but not organized
+- No ranking of bogies
+- Difficult to compare capacities
 
-👉 UC6 solves this using HashMap.
+👉 UC7 solves this using Comparator.
 
 ---
 
 ## 🔑 Key Concepts Used
 
-- **HashMap** → Key–value data structure  
-- **Map Interface** → Associates keys with values  
-- **put()** → Insert mapping  
-- **entrySet()** → Iterate over entries  
-- **Fast Lookup** → Retrieve values in constant time  
+- **Comparator** → Custom sorting logic  
+- **Custom Class (Bogie)** → Object with name & capacity  
+- **List** → Stores bogie objects  
+- **sort()** → Applies sorting  
+- **Lambda / Method Reference** → Clean comparison logic  
 
 ---
 
 ## 🛠 Key Requirements Implemented
 
-- Created `HashMap<String, Integer>`  
-- Added bogie-capacity mappings:
+- Created `Bogie` class with name & capacity  
+- Stored bogies in `List<Bogie>`  
+- Added:
   - Sleeper → 72  
-  - AC Chair → 54  
+  - AC Chair → 56  
   - First Class → 24  
-- Iterated using `entrySet()`  
-- Displayed all bogies with capacity  
+- Sorted using `Comparator.comparingInt()`  
+- Displayed sorted results  
 
 ---
 
@@ -49,4 +50,4 @@ This use case introduces key–value mapping where each bogie is associated with
 
 1. Compile:
    ```bash
-   javac UseCase6BogieCapacityMapping.java
+   javac UseCase7SortBogiesByCapacity.java
