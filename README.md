@@ -1,45 +1,57 @@
-# Train Consist Management App  
-**App-Based Learning Using Core Java & Data Structures**
+# 🚆 Train Consist Management Application
 
-## Objective
-This project focuses on the design and implementation of a **Train Consist Management System** to demonstrate how Core Java and fundamental data structures are applied to solve real-world railway operations challenges. Rather than treating data structures as isolated theory, the system shows how they enable:
+## 📌 Overview
+The Train Consist Management App simulates how railway systems manage train bogies.
 
-- **Efficient Arrangement**: Reordering coaches using dynamic data structures.  
-- **Real-Time Consistency**: Maintaining coach composition and allocation integrity.  
-- **Validation**: Prevention of duplication or invalid configurations through structured logic.  
-- **Flexibility**: A maintainable system design adaptable to changing operational needs.  
-
-References:  
-- Springer Nature Link  
-- Smart Programming (+2)  
+This use case focuses on maintaining the correct physical order of bogies using LinkedList.
 
 ---
 
-## Learning Approach
-The application is developed incrementally, with each use case introducing one new concept at a time while reinforcing previously learned ideas. Every design decision is intentional and reflects how real-world systems evolve—from basic implementations to scalable and adaptable architectures.
+## 🎯 Use Case 4: Maintain Ordered Train Consist (LinkedList)
 
-Each stage highlights:
-- Why a specific data structure is chosen.  
-- What operational problem it solves in a railway context.  
-- What constraints or inefficiencies exist before refinement.  
-
-References:  
-- Scribd  
-- Smart Programming (+2)  
+### 📖 Description
+This use case demonstrates how LinkedList helps maintain the physical sequence of train bogies and allows efficient insertion and deletion.
 
 ---
 
-## Scope & Focus
-The emphasis is on **data structures, object-oriented design, and advanced Java concepts**.
+## ⚠️ Drawback of UC3
+- HashSet ensures uniqueness but:
+  - Does NOT maintain order
+  - Produces unpredictable arrangement
+- Train formation requires strict sequence
 
-- **UI/UX**: User interaction and interface complexity are intentionally minimized to maintain focus on core system behavior and logic.  
-- **Operations**: All operations are deterministic and console-based, ensuring clarity, traceability, and ease of debugging.  
-
-References:  
-- Scribd  
-- Smart Programming (+1)  
+👉 UC4 solves this using LinkedList.
 
 ---
 
-## Outcome
-By the end of this project, learners will understand not only how to use Java data structures, but also how to apply them effectively in managing dynamic, real-world systems—bridging the gap between theoretical knowledge and practical software design.
+## 🔑 Key Concepts Used
+
+- **LinkedList** → Doubly linked list implementation  
+- **Node Structure** → Each element linked to previous and next  
+- **addFirst() / addLast()** → Insert at ends  
+- **add(index, element)** → Insert at specific position  
+- **removeFirst() / removeLast()** → Remove from ends  
+- **Order Preservation** → Maintains sequence  
+
+---
+
+## 🛠 Key Requirements Implemented
+
+- Created `LinkedList<String>` for train consist  
+- Added bogies:
+  - Engine
+  - Sleeper
+  - AC
+  - Cargo
+  - Guard  
+- Inserted "Pantry Car" at position 2  
+- Removed first and last bogies  
+- Displayed final train consist  
+
+---
+
+## ▶️ How to Run
+
+1. Compile:
+   ```bash
+   javac UseCase4OrderedConsistMgmnt.java
