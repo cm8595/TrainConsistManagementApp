@@ -1,53 +1,43 @@
 # 🚆 Train Consist Management Application
 
 ## 📌 Overview
-The Train Consist Management App simulates how railway systems manage train bogies and their attributes.
+The Train Consist Management App simulates how railway systems manage train bogies.
 
-This use case focuses on sorting bogies based on capacity using Comparator.
+This use case focuses on filtering bogies using Java Stream API.
 
 ---
 
-## 🎯 Use Case 7: Sort Bogies by Capacity (Comparator)
+## 🎯 Use Case 8: Filter Bogies Using Streams
 
 ### 📖 Description
-This use case introduces custom sorting of bogies using Comparator, enabling better planning and analysis.
+This use case demonstrates how to filter bogies based on capacity using a declarative programming approach.
 
 ---
 
-## ⚠️ Drawback of UC6
-- Data stored but not organized
-- No ranking of bogies
-- Difficult to compare capacities
+## ⚠️ Drawback of UC7
+- Sorting organizes data but does not filter it
+- Requires loops for selection
+- Code becomes verbose
 
-👉 UC7 solves this using Comparator.
+👉 UC8 solves this using Stream API.
 
 ---
 
 ## 🔑 Key Concepts Used
 
-- **Comparator** → Custom sorting logic  
-- **Custom Class (Bogie)** → Object with name & capacity  
-- **List** → Stores bogie objects  
-- **sort()** → Applies sorting  
-- **Lambda / Method Reference** → Clean comparison logic  
+- **Stream API** → Functional data processing  
+- **stream()** → Convert list to stream  
+- **filter()** → Apply condition  
+- **Lambda Expression** → Define logic  
+- **collect()** → Convert back to list  
+- **Declarative Style** → Focus on WHAT, not HOW  
 
 ---
 
 ## 🛠 Key Requirements Implemented
 
-- Created `Bogie` class with name & capacity  
-- Stored bogies in `List<Bogie>`  
-- Added:
-  - Sleeper → 72  
-  - AC Chair → 56  
-  - First Class → 24  
-- Sorted using `Comparator.comparingInt()`  
-- Displayed sorted results  
-
----
-
-## ▶️ How to Run
-
-1. Compile:
-   ```bash
-   javac UseCase7SortBogiesByCapacity.java
+- Reused Bogie class  
+- Created `List<Bogie>`  
+- Applied:
+  ```java
+  filter(b -> b.getCapacity() > 60)
