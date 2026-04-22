@@ -1,53 +1,27 @@
-# 🚆 Train Consist Management Application
+# 🚆 UC12: Safety Compliance Check (Streams)
 
-## 📌 Overview
-The Train Consist Management App simulates how railway systems manage train bogies and their attributes.
-
-This use case focuses on sorting bogies based on capacity using Comparator.
+## 📌 Description
+This use case validates safety rules for goods bogies using Stream API.
 
 ---
 
-## 🎯 Use Case 7: Sort Bogies by Capacity (Comparator)
-
-### 📖 Description
-This use case introduces custom sorting of bogies using Comparator, enabling better planning and analysis.
+## 🎯 Goal
+Ensure cylindrical bogies carry only petroleum.
 
 ---
 
-## ⚠️ Drawback of UC6
-- Data stored but not organized
-- No ranking of bogies
-- Difficult to compare capacities
+## 🔑 Key Concepts
 
-👉 UC7 solves this using Comparator.
-
----
-
-## 🔑 Key Concepts Used
-
-- **Comparator** → Custom sorting logic  
-- **Custom Class (Bogie)** → Object with name & capacity  
-- **List** → Stores bogie objects  
-- **sort()** → Applies sorting  
-- **Lambda / Method Reference** → Clean comparison logic  
+- Stream API
+- allMatch()
+- Lambda expressions
+- Conditional logic
 
 ---
 
-## 🛠 Key Requirements Implemented
+## 🛠 Rule Implemented
 
-- Created `Bogie` class with name & capacity  
-- Stored bogies in `List<Bogie>`  
-- Added:
-  - Sleeper → 72  
-  - AC Chair → 56  
-  - First Class → 24  
-- Sorted using `Comparator.comparingInt()`  
-- Displayed sorted results  
+Cylindrical bogie → only Petroleum allowed
 
----
-
-## ▶️ How to Run
-
-1. Compile:
-   ```bash
-   javac UseCase7SortBogiesByCapacity.java
+```java
+!type.equals("Cylindrical") || cargo.equals("Petroleum")
