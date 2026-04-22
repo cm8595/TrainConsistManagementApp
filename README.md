@@ -1,46 +1,52 @@
 # 🚆 Train Consist Management Application
 
 ## 📌 Overview
-The Train Consist Management App is a console-based Java application that simulates how railway systems manage train bogies.
+The Train Consist Management App simulates how railway systems manage train bogies.
 
-This use case focuses on enforcing uniqueness of bogie IDs using Set.
+This use case focuses on maintaining the correct physical order of bogies using LinkedList.
 
 ---
 
-## 🎯 Use Case 3: Track Unique Bogie IDs (HashSet)
+## 🎯 Use Case 4: Maintain Ordered Train Consist (LinkedList)
 
 ### 📖 Description
-This use case introduces the `Set` interface and `HashSet` implementation to ensure that no duplicate bogie IDs exist in the system.
+This use case demonstrates how LinkedList helps maintain the physical sequence of train bogies and allows efficient insertion and deletion.
 
 ---
 
-## ⚠️ Drawback of UC2
-- Used ArrayList which allows duplicates
-- Duplicate bogie IDs can cause:
-  - Data inconsistency
-  - Invalid train formation
-  - Safety issues
+## ⚠️ Drawback of UC3
+- HashSet ensures uniqueness but:
+  - Does NOT maintain order
+  - Produces unpredictable arrangement
+- Train formation requires strict sequence
 
-👉 UC3 solves this using HashSet.
+👉 UC4 solves this using LinkedList.
 
 ---
 
 ## 🔑 Key Concepts Used
 
-- **Set Interface** → Collection that does not allow duplicates  
-- **HashSet** → Implementation using hashing  
-- **add()** → Insert elements  
-- **Automatic Deduplication** → Removes duplicates automatically  
-- **Unordered Storage** → No index-based ordering  
+- **LinkedList** → Doubly linked list implementation  
+- **Node Structure** → Each element linked to previous and next  
+- **addFirst() / addLast()** → Insert at ends  
+- **add(index, element)** → Insert at specific position  
+- **removeFirst() / removeLast()** → Remove from ends  
+- **Order Preservation** → Maintains sequence  
 
 ---
 
 ## 🛠 Key Requirements Implemented
 
-- Created `HashSet<String>` for bogie IDs  
-- Added duplicate values intentionally  
-- Displayed final set  
-- Verified duplicates are removed automatically  
+- Created `LinkedList<String>` for train consist  
+- Added bogies:
+  - Engine
+  - Sleeper
+  - AC
+  - Cargo
+  - Guard  
+- Inserted "Pantry Car" at position 2  
+- Removed first and last bogies  
+- Displayed final train consist  
 
 ---
 
@@ -48,4 +54,4 @@ This use case introduces the `Set` interface and `HashSet` implementation to ens
 
 1. Compile:
    ```bash
-   javac UseCase3UniqueBogieIDMgmnt.java
+   javac UseCase4OrderedConsistMgmnt.java
